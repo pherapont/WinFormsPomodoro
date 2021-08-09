@@ -6,4 +6,14 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="libs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PomodoroLib">
+      <HintPath>libs\PomodoroLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
