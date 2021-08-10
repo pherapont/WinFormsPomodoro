@@ -14,13 +14,15 @@ namespace WinFormsPomodoro
     public partial class FormTasksList : Form, ILifeTaskMenegable
     {
         Commands.MainMenuAction mainMenuAction;
+        MainController mainController;
+        Form2 FillTaskForm;
 
         public FormTasksList()
         {
             InitializeComponent();
             ILifeTaskMenegable taskManager = (ILifeTaskMenegable)this;
             IPomodorable pomodoro = new Pomodoro();
-            MainController mainController = new(taskManager, pomodoro);
+            mainController = new(taskManager, pomodoro);
             mainController.Run();
 
         }
@@ -32,17 +34,19 @@ namespace WinFormsPomodoro
 
         public void EditTask(LifeTask lifeTask)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void FillTask(LifeTask lifeTask)
         {
-            throw new NotImplementedException();
+            FillTaskForm = new Form2(lifeTask);
+            FillTaskForm.Show();
+            FillTaskForm.GetDescription();
         }
 
         public int GetTaskFromTaskList(LifeTaskList taskList)
         {
-            throw new NotImplementedException();
+            return 1;
         }
 
         public void PrintMessage(string mes)
@@ -52,22 +56,22 @@ namespace WinFormsPomodoro
 
         public void RunProcess(LifeTask task)
         {
-            throw new NotImplementedException();
+            
         }
 
         public Commands.MainMenuAction SelectAction(bool hasTask)
         {
-            return mainMenuAction;
+            return Commands.MainMenuAction.CreateTask;
         }
 
         public void ShowPrecess(LifeTask task)
         {
-            throw new NotImplementedException();
+            
         }
 
         public Commands.TaskAction ShowTask(LifeTask task)
         {
-            throw new NotImplementedException();
+            return Commands.TaskAction.Edit;
         }
 
         private void buttonCreateTask_Click(object sender, EventArgs e)

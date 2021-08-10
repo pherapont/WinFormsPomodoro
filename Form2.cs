@@ -11,21 +11,22 @@ using PomodoLib;
 
 namespace WinFormsPomodoro
 {
-    public partial class Form2 : Form, IPomodorable
+    public partial class Form2 : Form
     {
+
+        LifeTask LifeTask;
         public Form2()
         {
             InitializeComponent();
         }
-
-        public Commands.PomodoroAction SelectAction()
+        public Form2(LifeTask lifeTask)
         {
-            throw new NotImplementedException();
+            InitializeComponent();
+            LifeTask = lifeTask;
         }
-
-        public void ShowPomodoro(int time, string description)
+        public void GetDescription()
         {
-            throw new NotImplementedException();
+            LifeTask.TaskDescription = Description.Text;
         }
     }
 }

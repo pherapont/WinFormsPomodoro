@@ -18,8 +18,7 @@ namespace WinFormsPomodoro
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form form1 = new FormTasksList();
-            Application.Run(form1);
+            Application.Run(new FormTasksList());
         }
     }
 }

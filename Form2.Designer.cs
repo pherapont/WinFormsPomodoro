@@ -29,12 +29,34 @@ namespace WinFormsPomodoro
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.Description = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // Description
+            // 
+            this.Description.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Description.Location = new System.Drawing.Point(78, 40);
+            this.Description.Multiline = true;
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(297, 62);
+            this.Description.TabIndex = 0;
+            this.Description.Text = "Описание задачи";
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Description);
+            this.Name = "Form2";
             this.Text = "Form2";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox Description;
     }
 }
