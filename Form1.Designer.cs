@@ -30,21 +30,11 @@ namespace WinFormsPomodoro
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTasksList));
-            this.listBoxTasksList = new System.Windows.Forms.ListBox();
             this.LabelTaskList = new System.Windows.Forms.Label();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonRun = new System.Windows.Forms.Button();
-            this.buttonDeleteTask = new System.Windows.Forms.Button();
+            this.buttonCreateTask = new System.Windows.Forms.Button();
+            this.buttonSelectTask = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // listBoxTasksList
-            // 
-            this.listBoxTasksList.FormattingEnabled = true;
-            this.listBoxTasksList.ItemHeight = 18;
-            this.listBoxTasksList.Location = new System.Drawing.Point(12, 34);
-            this.listBoxTasksList.Name = "listBoxTasksList";
-            this.listBoxTasksList.Size = new System.Drawing.Size(383, 490);
-            this.listBoxTasksList.TabIndex = 0;
             // 
             // LabelTaskList
             // 
@@ -52,48 +42,62 @@ namespace WinFormsPomodoro
             this.LabelTaskList.Location = new System.Drawing.Point(12, 12);
             this.LabelTaskList.Margin = new System.Windows.Forms.Padding(3);
             this.LabelTaskList.Name = "LabelTaskList";
-            this.LabelTaskList.Size = new System.Drawing.Size(99, 19);
+            this.LabelTaskList.Size = new System.Drawing.Size(98, 17);
             this.LabelTaskList.TabIndex = 1;
             this.LabelTaskList.Text = "Список задач";
             // 
-            // buttonEdit
+            // buttonCreateTask
             // 
-            this.buttonEdit.Location = new System.Drawing.Point(420, 395);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(166, 39);
-            this.buttonEdit.TabIndex = 2;
-            this.buttonEdit.Text = "Редактировать";
-            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonCreateTask.BackColor = System.Drawing.Color.PeachPuff;
+            this.buttonCreateTask.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
+            this.buttonCreateTask.FlatAppearance.BorderSize = 0;
+            this.buttonCreateTask.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonCreateTask.Location = new System.Drawing.Point(26, 84);
+            this.buttonCreateTask.Name = "buttonCreateTask";
+            this.buttonCreateTask.Size = new System.Drawing.Size(260, 85);
+            this.buttonCreateTask.TabIndex = 2;
+            this.buttonCreateTask.Text = "Создать новую задачу";
+            this.buttonCreateTask.UseVisualStyleBackColor = false;
+            this.buttonCreateTask.Click += new System.EventHandler(this.buttonCreateTask_Click);
             // 
-            // buttonRun
+            // buttonSelectTask
             // 
-            this.buttonRun.Location = new System.Drawing.Point(420, 440);
-            this.buttonRun.Name = "buttonRun";
-            this.buttonRun.Size = new System.Drawing.Size(166, 39);
-            this.buttonRun.TabIndex = 3;
-            this.buttonRun.Text = "Выполнить";
-            this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonSelectTask.BackColor = System.Drawing.Color.OliveDrab;
+            this.buttonSelectTask.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
+            this.buttonSelectTask.FlatAppearance.BorderSize = 0;
+            this.buttonSelectTask.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonSelectTask.Location = new System.Drawing.Point(26, 198);
+            this.buttonSelectTask.Name = "buttonSelectTask";
+            this.buttonSelectTask.Size = new System.Drawing.Size(260, 85);
+            this.buttonSelectTask.TabIndex = 3;
+            this.buttonSelectTask.Text = "Выбрать из списка";
+            this.buttonSelectTask.UseVisualStyleBackColor = false;
+            this.buttonSelectTask.Click += new System.EventHandler(this.buttonSelectTask_Click);
             // 
-            // buttonDeleteTask
+            // buttonExit
             // 
-            this.buttonDeleteTask.Location = new System.Drawing.Point(420, 485);
-            this.buttonDeleteTask.Name = "buttonDeleteTask";
-            this.buttonDeleteTask.Size = new System.Drawing.Size(166, 39);
-            this.buttonDeleteTask.TabIndex = 4;
-            this.buttonDeleteTask.Text = "Удалить";
-            this.buttonDeleteTask.UseVisualStyleBackColor = true;
+            this.buttonExit.BackColor = System.Drawing.Color.Tomato;
+            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonExit.Location = new System.Drawing.Point(26, 318);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(260, 85);
+            this.buttonExit.TabIndex = 4;
+            this.buttonExit.Text = "Завершить работу";
+            this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // FormTasksList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(606, 540);
-            this.Controls.Add(this.buttonDeleteTask);
-            this.Controls.Add(this.buttonRun);
-            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonSelectTask);
+            this.Controls.Add(this.buttonCreateTask);
             this.Controls.Add(this.LabelTaskList);
-            this.Controls.Add(this.listBoxTasksList);
             this.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
@@ -105,12 +109,10 @@ namespace WinFormsPomodoro
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxTasksList;
         private System.Windows.Forms.Label LabelTaskList;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonRun;
-        private System.Windows.Forms.Button buttonDeleteTask;
+        private System.Windows.Forms.Button buttonCreateTask;
+        private System.Windows.Forms.Button buttonSelectTask;
+        private System.Windows.Forms.Button buttonExit;
     }
 }
 

@@ -13,21 +13,21 @@ namespace WinFormsPomodoro
 {
     public partial class FormTasksList : Form, ILifeTaskMenegable
     {
+        Commands.MainMenuAction mainMenuAction;
+
         public FormTasksList()
         {
             InitializeComponent();
+            ILifeTaskMenegable taskManager = (ILifeTaskMenegable)this;
+            IPomodorable pomodoro = new Pomodoro();
+            MainController mainController = new(taskManager, pomodoro);
+            mainController.Run();
 
-            XMLController xMLController = new XMLController();
-            LifeTaskList lifeTasks = xMLController.ReadDataFromXml();
-            foreach (LifeTask task in lifeTasks)
-            {
-                listBoxTasksList.Items.Add(task.TaskDescription);
-            }
         }
 
         public void ConfigureWindow()
         {
-            throw new NotImplementedException();
+           // throw new NotImplementedException();
         }
 
         public void EditTask(LifeTask lifeTask)
@@ -47,7 +47,7 @@ namespace WinFormsPomodoro
 
         public void PrintMessage(string mes)
         {
-            throw new NotImplementedException();
+            LabelTaskList.Text = mes;
         }
 
         public void RunProcess(LifeTask task)
@@ -57,7 +57,7 @@ namespace WinFormsPomodoro
 
         public Commands.MainMenuAction SelectAction(bool hasTask)
         {
-            throw new NotImplementedException();
+            return mainMenuAction;
         }
 
         public void ShowPrecess(LifeTask task)
@@ -68,6 +68,21 @@ namespace WinFormsPomodoro
         public Commands.TaskAction ShowTask(LifeTask task)
         {
             throw new NotImplementedException();
+        }
+
+        private void buttonCreateTask_Click(object sender, EventArgs e)
+        {
+            mainMenuAction = Commands.MainMenuAction.CreateTask;
+        }
+
+        private void buttonSelectTask_Click(object sender, EventArgs e)
+        {
+            mainMenuAction = Commands.MainMenuAction.SelectTask;
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            mainMenuAction = Commands.MainMenuAction.Exit;
         }
     }
 }

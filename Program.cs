@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PomodoLib;
 
 namespace WinFormsPomodoro
 {
@@ -17,7 +18,8 @@ namespace WinFormsPomodoro
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormTasksList());
+            Form form1 = new FormTasksList();
+            Application.Run(form1);
         }
     }
 }
