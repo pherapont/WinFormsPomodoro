@@ -11,23 +11,63 @@ using PomodoLib;
 
 namespace WinFormsPomodoro
 {
-    public partial class FormTasksList : Form
+    public partial class FormTasksList : Form, ILifeTaskMenegable
     {
         public FormTasksList()
         {
             InitializeComponent();
-            listBoxTasksList.Items.Add("help me");
-            listBoxTasksList.Items.Add("i have done this self");
+
+            XMLController xMLController = new XMLController();
+            LifeTaskList lifeTasks = xMLController.ReadDataFromXml();
+            foreach (LifeTask task in lifeTasks)
+            {
+                listBoxTasksList.Items.Add(task.TaskDescription);
+            }
         }
 
-        private void listBoxTasksList_SelectedIndexChanged(object sender, EventArgs e)
+        public void ConfigureWindow()
         {
-
+            throw new NotImplementedException();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void EditTask(LifeTask lifeTask)
         {
+            throw new NotImplementedException();
+        }
 
+        public void FillTask(LifeTask lifeTask)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetTaskFromTaskList(LifeTaskList taskList)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void PrintMessage(string mes)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RunProcess(LifeTask task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Commands.MainMenuAction SelectAction(bool hasTask)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowPrecess(LifeTask task)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Commands.TaskAction ShowTask(LifeTask task)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,9 +14,6 @@
     <Reference Include="PomodoLib">
       <HintPath>..\PomodoLib\bin\Release\net5.0\PomodoLib.dll</HintPath>
     </Reference>
-    <Reference Include="PomodoroLib">
-      <HintPath>libs\PomodoroLib.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

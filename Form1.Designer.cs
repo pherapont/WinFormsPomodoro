@@ -45,7 +45,6 @@ namespace WinFormsPomodoro
             this.listBoxTasksList.Name = "listBoxTasksList";
             this.listBoxTasksList.Size = new System.Drawing.Size(383, 490);
             this.listBoxTasksList.TabIndex = 0;
-            this.listBoxTasksList.SelectedIndexChanged += new System.EventHandler(this.listBoxTasksList_SelectedIndexChanged);
             // 
             // LabelTaskList
             // 
@@ -83,7 +82,6 @@ namespace WinFormsPomodoro
             this.buttonDeleteTask.TabIndex = 4;
             this.buttonDeleteTask.Text = "Удалить";
             this.buttonDeleteTask.UseVisualStyleBackColor = true;
-            this.buttonDeleteTask.Click += new System.EventHandler(this.button3_Click);
             // 
             // FormTasksList
             // 
