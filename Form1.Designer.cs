@@ -31,9 +31,10 @@ namespace WinFormsPomodoro
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTasksList));
             this.LabelTaskList = new System.Windows.Forms.Label();
-            this.buttonCreateTask = new System.Windows.Forms.Button();
             this.buttonSelectTask = new System.Windows.Forms.Button();
-            this.buttonExit = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelTaskList
@@ -46,27 +47,13 @@ namespace WinFormsPomodoro
             this.LabelTaskList.TabIndex = 1;
             this.LabelTaskList.Text = "Список задач";
             // 
-            // buttonCreateTask
-            // 
-            this.buttonCreateTask.BackColor = System.Drawing.Color.PeachPuff;
-            this.buttonCreateTask.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
-            this.buttonCreateTask.FlatAppearance.BorderSize = 0;
-            this.buttonCreateTask.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonCreateTask.Location = new System.Drawing.Point(26, 84);
-            this.buttonCreateTask.Name = "buttonCreateTask";
-            this.buttonCreateTask.Size = new System.Drawing.Size(260, 85);
-            this.buttonCreateTask.TabIndex = 2;
-            this.buttonCreateTask.Text = "Создать новую задачу";
-            this.buttonCreateTask.UseVisualStyleBackColor = false;
-            this.buttonCreateTask.Click += new System.EventHandler(this.buttonCreateTask_Click);
-            // 
             // buttonSelectTask
             // 
             this.buttonSelectTask.BackColor = System.Drawing.Color.OliveDrab;
             this.buttonSelectTask.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
             this.buttonSelectTask.FlatAppearance.BorderSize = 0;
             this.buttonSelectTask.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonSelectTask.Location = new System.Drawing.Point(26, 198);
+            this.buttonSelectTask.Location = new System.Drawing.Point(309, 430);
             this.buttonSelectTask.Name = "buttonSelectTask";
             this.buttonSelectTask.Size = new System.Drawing.Size(260, 85);
             this.buttonSelectTask.TabIndex = 3;
@@ -74,19 +61,40 @@ namespace WinFormsPomodoro
             this.buttonSelectTask.UseVisualStyleBackColor = false;
             this.buttonSelectTask.Click += new System.EventHandler(this.buttonSelectTask_Click);
             // 
-            // buttonExit
+            // listBox1
             // 
-            this.buttonExit.BackColor = System.Drawing.Color.Tomato;
-            this.buttonExit.FlatAppearance.BorderColor = System.Drawing.SystemColors.Window;
-            this.buttonExit.FlatAppearance.BorderSize = 0;
-            this.buttonExit.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonExit.Location = new System.Drawing.Point(26, 318);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(260, 85);
-            this.buttonExit.TabIndex = 4;
-            this.buttonExit.Text = "Завершить работу";
-            this.buttonExit.UseVisualStyleBackColor = false;
-            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(12, 90);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(557, 319);
+            this.listBox1.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(13, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(360, 27);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.Text = "Текст задачи";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.textBox1_Activtsation);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.OliveDrab;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(394, 34);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(5);
+            this.button1.Size = new System.Drawing.Size(175, 46);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Добавить в список";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormTasksList
             // 
@@ -94,9 +102,10 @@ namespace WinFormsPomodoro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(606, 540);
-            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.buttonSelectTask);
-            this.Controls.Add(this.buttonCreateTask);
             this.Controls.Add(this.LabelTaskList);
             this.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -110,9 +119,10 @@ namespace WinFormsPomodoro
 
         #endregion
         private System.Windows.Forms.Label LabelTaskList;
-        private System.Windows.Forms.Button buttonCreateTask;
         private System.Windows.Forms.Button buttonSelectTask;
-        private System.Windows.Forms.Button buttonExit;
+        public System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 
