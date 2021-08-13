@@ -78,7 +78,6 @@ namespace WinFormsPomodoro
             this.textBox1.Size = new System.Drawing.Size(360, 29);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Текст задачи";
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             this.textBox1.Enter += new System.EventHandler(this.TextBox1_Activisation);
             this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
             // 

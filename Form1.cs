@@ -14,7 +14,6 @@ namespace WinFormsPomodoro
 {
     public partial class FormTasksList : Form
     {
-        string textTask;
         public FormTasksList()
         {
             InitializeComponent();
@@ -45,15 +44,9 @@ namespace WinFormsPomodoro
             LabelTaskList.Text = res;
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-            textTask = textBox1.Text;
-            LabelTaskList.Text = textTask;
-        }
-
         private void Button1_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(textTask);
+            listBox1.Items.Add(textBox1.Text);
         }
 
         private void TextBox1_Activisation(object sender, EventArgs e)
@@ -65,7 +58,7 @@ namespace WinFormsPomodoro
         {
             if (e.KeyData == Keys.Enter)
             {
-                listBox1.Items.Add(textTask);
+                listBox1.Items.Add(textBox1.Text);
                 textBox1.Text = "";
                 e.Handled = true;
                 e.SuppressKeyPress = true;
