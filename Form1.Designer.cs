@@ -43,7 +43,7 @@ namespace WinFormsPomodoro
             this.LabelTaskList.Location = new System.Drawing.Point(12, 12);
             this.LabelTaskList.Margin = new System.Windows.Forms.Padding(3);
             this.LabelTaskList.Name = "LabelTaskList";
-            this.LabelTaskList.Size = new System.Drawing.Size(98, 17);
+            this.LabelTaskList.Size = new System.Drawing.Size(99, 19);
             this.LabelTaskList.TabIndex = 1;
             this.LabelTaskList.Text = "Список задач";
             // 
@@ -59,15 +59,15 @@ namespace WinFormsPomodoro
             this.buttonSelectTask.TabIndex = 3;
             this.buttonSelectTask.Text = "Выбрать из списка";
             this.buttonSelectTask.UseVisualStyleBackColor = false;
-            this.buttonSelectTask.Click += new System.EventHandler(this.buttonSelectTask_Click);
+            this.buttonSelectTask.Click += new System.EventHandler(this.ButtonSelectTask_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
+            this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(12, 90);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(557, 319);
+            this.listBox1.Size = new System.Drawing.Size(557, 310);
             this.listBox1.TabIndex = 4;
             // 
             // textBox1
@@ -75,11 +75,12 @@ namespace WinFormsPomodoro
             this.textBox1.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox1.Location = new System.Drawing.Point(13, 45);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 27);
+            this.textBox1.Size = new System.Drawing.Size(360, 29);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "Текст задачи";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Enter += new System.EventHandler(this.textBox1_Activtsation);
+            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.textBox1.Enter += new System.EventHandler(this.TextBox1_Activisation);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBox1_KeyDown);
             // 
             // button1
             // 
@@ -94,11 +95,11 @@ namespace WinFormsPomodoro
             this.button1.TabIndex = 6;
             this.button1.Text = "Добавить в список";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // FormTasksList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(606, 540);
