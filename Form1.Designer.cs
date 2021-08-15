@@ -67,8 +67,9 @@ namespace WinFormsPomodoro
             this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(12, 90);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(557, 310);
+            this.listBox1.Size = new System.Drawing.Size(557, 328);
             this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -112,6 +113,7 @@ namespace WinFormsPomodoro
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "FormTasksList";
             this.Text = "Pomodoro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTasksList_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
