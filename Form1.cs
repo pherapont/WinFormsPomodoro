@@ -13,6 +13,7 @@ using PomodoLib;
 namespace WinFormsPomodoro
 {
     //TODO  рефакторить наименования полей и методов
+    //TODO  реализовать удаление задачи из списка
     public partial class FormTasksList : Form
     {
         string selectedTask;
